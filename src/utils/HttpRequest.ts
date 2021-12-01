@@ -8,9 +8,9 @@ export class HTTPRequest implements HttpRequest{
     }
     async get({headers,url}:get){
 
-        var res = undefined
+        let res = undefined
 
-        const promise =  new Promise((res,rej)=>{
+        const promise =  new Promise((res)=>{
             axios.get(`${this.baseUrl}${url || ""}`,{headers: headers === undefined ? headers : headers as AxiosRequestHeaders}).
             then(response=>{
                 res({
@@ -31,9 +31,9 @@ export class HTTPRequest implements HttpRequest{
     }
 
     async post({headers,url,data}:post){
-        var res = undefined
+        let res = undefined
 
-        const promise =  new Promise((res,rej)=>{
+        const promise =  new Promise((res)=>{
             axios.post(`${this.baseUrl}${url || ""}`,data,{headers: headers === undefined ? headers : headers as AxiosRequestHeaders}).
             then(response=>{
                 res({
@@ -55,9 +55,9 @@ export class HTTPRequest implements HttpRequest{
     }
     
     async put({url,headers,data}:put){
-        var res = undefined
+        let res = undefined
 
-        const promise =  new Promise((res,rej)=>{
+        const promise =  new Promise((res)=>{
             axios.put(`${this.baseUrl}${url || ""}`,data,{headers: headers === undefined ? headers : headers as AxiosRequestHeaders}).
             then(response=>{
                 res({
@@ -78,9 +78,9 @@ export class HTTPRequest implements HttpRequest{
     }
 
     async delete({headers,url}:dlt){
-        var res = undefined
+        let res = undefined
 
-        const promise =  new Promise((res,rej)=>{
+        const promise =  new Promise((res)=>{
             axios.delete(`${this.baseUrl}${url || ""}`,{headers: headers === undefined ? headers : headers as AxiosRequestHeaders}).
             then(response=>{
                 res({
